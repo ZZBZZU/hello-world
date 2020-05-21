@@ -1,0 +1,14 @@
+#include<Windows.h>
+#include<tchar.h>
+#include<iostream>
+using namespace std;
+
+int WINAPI _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdLine,int nCmdShow)
+{
+	HANDLE A=CreateFile(_T("D:\\ABCD.txt"), GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);//路径，读写模式，共享模式，指向安全属性的指针（NULL），/如何创建，//文件属性，用于复制文件句柄
+	if (A!=INVALID_HANDLE_VALUE)
+	{
+		MessageBox(NULL, _T("文件创建成功"), _T("Tip"), MB_OK);
+	}
+
+}
